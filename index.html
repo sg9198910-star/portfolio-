@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shantanu Gupta | Developer Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080512;
+            color: white;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #120a22;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #a855f7;
+        }
+
+        header h2 {
+            color: #e879f9;
+        }
+
+        nav {
+            margin-top: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 8px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #e879f9;
+        }
+
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #c084fc;
+            margin-bottom: 10px;
+        }
+
+        .hero h2 {
+            color: #5ee7ff;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: #c9c2d8;
+        }
+
+        .button {
+            display: inline-block;
+            background: #9333ea;
+            color: white;
+            padding: 12px 22px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #c026d3;
+        }
+
+        section {
+            padding: 55px 20px;
+            text-align: center;
+            border-top: 1px solid #34204c;
+        }
+
+        section h2 {
+            color: #e879f9;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .card {
+            background: #130d22;
+            border: 1px solid #6b21a8;
+            padding: 22px;
+            border-radius: 12px;
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .card h3 {
+            color: #5ee7ff;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            color: #c9c2d8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #1b1030;
+            border: 1px solid #a855f7;
+            padding: 15px 22px;
+            border-radius: 10px;
+        }
+
+        .card a {
+            color: #e879f9;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #120a22;
+            padding: 22px;
+            text-align: center;
+            color: #c9c2d8;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>SG | SHANTANU GUPTA</h2>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="home">
+            <h1>SHANTANU GUPTA</h1>
+            <h2>Future Software Engineer</h2>
+
+            <p>
+                Hello! I am Shantanu Gupta, a BCA student
+                interested in C programming, Data Structures
+                and Algorithms. I enjoy solving problems and
+                learning new technologies.
+            </p>
+
+            <a class="button" href="#projects">Explore My Projects</a>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Me</h2>
+
+                <div class="card">
+                    <h3>Who Am I?</h3>
+
+                    <p>
+                        I am a BCA student at Shri Ram Institute
+                        of Management & Technology. I am a fresher
+                        who wants to build a career in the IT field.
+                        My goal is to become a software engineer.
+                        I am hardworking and willing to learn
+                        new technologies.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>My Technical Skills</h2>
+
+                <div class="skills">
+                    <div class="skill">C Programming</div>
+                    <div class="skill">Data Structures</div>
+                    <div class="skill">Algorithms</div>
+                    <div class="skill">Problem Solving</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">GitHub</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+
+                <div class="card">
+                    <h3>1. Odd or Even Number</h3>
+
+                    <p>
+                        A C program that checks whether a number
+                        is odd or even using the modulo operator.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Calculator Program</h3>
+
+                    <p>
+                        A basic C calculator that performs
+                        addition, subtraction, multiplication
+                        and division.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>3. Number Pattern</h3>
+
+                    <p>
+                        A C programming project that uses loops
+                        to print different number patterns.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <h2>Education</h2>
+
+                <div class="card">
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p>
+                        Shri Ram Institute of Management & Technology
+                    </p>
+                    <p>Expected Passing Year: 2027</p>
+                </div>
+
+                <div class="card">
+                    <h3>Class 12</h3>
+                    <p>Percentage: 72.3%</p>
+                </div>
+
+                <div class="card">
+                    <h3>Class 10</h3>
+                    <p>Percentage: 65.5%</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Me</h2>
+
+                <div class="card">
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:sg9198910@gmail.com">
+                            sg9198910@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong>
+                        Dibai, Uttar Pradesh, India
+                    </p>
+
+                    <p>
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/sg9198910-star"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Visit My GitHub Profile
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="year"></span>
+            Shantanu Gupta | Developer Portfolio
+        </p>
+
+        <p>Built with HTML, CSS and JavaScript</p>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>
