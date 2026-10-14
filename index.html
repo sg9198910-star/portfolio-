@@ -18,15 +18,15 @@ body {
     font-family: Arial, sans-serif;
     background: #090014;
     color: white;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 header {
     background: #160027;
-    padding: 20px;
+    padding: 18px;
     text-align: center;
     border-bottom: 2px solid #a855f7;
-    box-shadow: 0 0 20px #8b5cf6;
+    box-shadow: 0 0 15px #7e22ce;
 }
 
 header h2 {
@@ -35,13 +35,13 @@ header h2 {
 }
 
 nav {
-    margin-top: 15px;
+    margin-top: 12px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 8px;
+    margin: 7px;
     display: inline-block;
     font-size: 14px;
 }
@@ -51,93 +51,93 @@ nav a:hover {
 }
 
 .hero {
-    min-height: 75vh;
+    min-height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 35px 20px;
+    background: radial-gradient(ellipse at top, #32105b, #090014 70%);
 }
 
 .hero h1 {
-    font-size: 38px;
+    font-size: clamp(30px, 6vw, 48px);
     margin-bottom: 15px;
 }
 
 .hero h1 span {
     color: #c084fc;
-    text-shadow: 0 0 15px #a855f7;
+    text-shadow: 0 0 15px #9333ea;
 }
 
 .hero p {
+    max-width: 650px;
     color: #d4d4d8;
-    max-width: 600px;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .button {
     display: inline-block;
-    padding: 12px 22px;
+    padding: 10px 20px;
     margin: 6px;
-    background: #9333ea;
+    background: #7e22ce;
     color: white;
+    border: 1px solid #c084fc;
     border-radius: 25px;
     text-decoration: none;
-    border: 1px solid #c084fc;
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 .button:hover {
-    background: #06b6d4;
-    color: black;
-    box-shadow: 0 0 20px #06b6d4;
+    background: #22d3ee;
+    color: #090014;
 }
 
 section {
-    padding: 55px 20px;
-    max-width: 1000px;
+    padding: 50px 20px;
+    max-width: 1050px;
     margin: auto;
 }
 
-.section-title {
+.title {
     text-align: center;
+    font-size: 29px;
     color: #d8b4fe;
-    font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
-.about-box {
-    background: #170829;
-    padding: 25px;
-    border-radius: 15px;
-    border: 1px solid #7e22ce;
-    text-align: center;
-}
-
-.skills, .projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-}
-
-.card {
+.box, .card {
     background: #170829;
     padding: 22px;
     border-radius: 15px;
     border: 1px solid #6b21a8;
-    transition: 0.3s;
+}
+
+.box {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    transition: 0.25s;
+    overflow-wrap: anywhere;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
     border-color: #22d3ee;
     box-shadow: 0 0 15px #581c87;
 }
 
 .card h3 {
     color: #22d3ee;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .card p {
@@ -145,21 +145,33 @@ section {
     font-size: 14px;
 }
 
+pre {
+    background: #080510;
+    color: #d8b4fe;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 9px;
+    border: 1px solid #3b0764;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    overflow-x: auto;
+}
+
 .tag {
     display: inline-block;
     background: #3b0764;
     color: #e9d5ff;
-    padding: 5px 10px;
+    padding: 4px 9px;
     border-radius: 15px;
-    margin: 4px;
+    margin: 5px 4px 0 0;
     font-size: 12px;
 }
 
-.contact {
-    text-align: center;
-    background: #170829;
-    padding: 30px;
-    border-radius: 15px;
+.small {
+    color: #c4b5fd;
+    font-size: 13px;
+    margin-top: 12px;
 }
 
 footer {
@@ -167,16 +179,39 @@ footer {
     padding: 22px;
     background: #160027;
     color: #c4b5fd;
-    border-top: 1px solid #7e22ce;
+    border-top: 1px solid #6b21a8;
 }
 
-@media (max-width: 500px) {
-    .hero h1 {
-        font-size: 30px;
+@media(max-width: 500px) {
+    nav a {
+        margin: 4px;
+        font-size: 12px;
     }
 
-    .section-title {
+    .title {
         font-size: 25px;
+    }
+}
+
+@media print {
+    header, .hero, #skills, #programs, #dsa,
+    #projects, #contact, footer, .button {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .box {
+        background: white;
+        border: none;
+        color: black;
+    }
+
+    .box p {
+        color: black;
     }
 }
 </style>
@@ -191,8 +226,10 @@ footer {
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#programs">Programs</a>
+        <a href="#dsa">DSA</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#resume">Resume</a>
     </nav>
 </header>
 
@@ -202,173 +239,467 @@ footer {
     <p>
         BCA Student | Aspiring Software Developer
         <br><br>
-        I am learning C Programming, Data Structures,
-        Algorithms and Java. I enjoy solving problems
-        and building programming projects.
+        Learning C Programming, Java, Data Structures
+        and Algorithms through regular practice.
     </p>
 
-    <div>
-        <a href="#projects" class="button">Explore Projects</a>
+    <a href="#programs" class="button">Explore Programs</a>
 
-        <a href="https://github.com/sg9198910-star"
-           class="button" target="_blank" rel="noopener noreferrer">
-           My GitHub
-        </a>
-    </div>
+    <a href="#resume" class="button">View Resume</a>
+
+    <a href="https://github.com/sg9198910-star"
+       class="button" target="_blank" rel="noopener noreferrer">
+       My GitHub
+    </a>
 </div>
 
 <section id="about">
-    <h2 class="section-title">About Me</h2>
+    <h2 class="title">About Me</h2>
 
-    <div class="about-box">
+    <div class="box">
         <p>
             I am a BCA student and an aspiring software developer.
-            I am developing my programming skills through regular
-            practice and projects.
+            I am developing my programming skills by practising
+            C Programming, Java, Data Structures and Algorithms.
         </p>
 
-        <br>
-
         <p>
-            My current learning areas are C Programming,
-            Data Structures and Algorithms, and Java.
-            My goal is to grow as a software engineer.
+            My goal is to become a software engineer and
+            continue learning new technologies.
         </p>
     </div>
 </section>
 
 <section id="skills">
-    <h2 class="section-title">My Skills</h2>
+    <h2 class="title">My Skills</h2>
 
-    <div class="skills">
+    <div class="grid">
+
         <div class="card">
             <h3>C Programming</h3>
-            <p>Learning variables, loops, arrays, functions and pointers.</p>
-            <br>
+            <p>Variables, data types, operators, conditions, loops, arrays and functions.</p>
             <span class="tag">C</span>
-            <span class="tag">Loops</span>
-            <span class="tag">Arrays</span>
-        </div>
-
-        <div class="card">
-            <h3>Data Structures & Algorithms</h3>
-            <p>Practising problem-solving and basic algorithms.</p>
-            <br>
-            <span class="tag">DSA</span>
             <span class="tag">Logic Building</span>
         </div>
 
         <div class="card">
             <h3>Java Programming</h3>
-            <p>Learning Java syntax, variables, conditions and loops.</p>
-            <br>
+            <p>Java syntax, input/output, conditions, loops and OOP fundamentals.</p>
             <span class="tag">Java</span>
             <span class="tag">OOP Basics</span>
         </div>
 
         <div class="card">
+            <h3>DSA</h3>
+            <p>Learning arrays, searching, sorting and basic problem-solving algorithms.</p>
+            <span class="tag">DSA</span>
+            <span class="tag">Algorithms</span>
+        </div>
+
+        <div class="card">
             <h3>Web Development</h3>
-            <p>Learning to build and publish websites using HTML and CSS.</p>
-            <br>
+            <p>Building a portfolio using HTML and CSS and publishing it with GitHub Pages.</p>
             <span class="tag">HTML</span>
             <span class="tag">CSS</span>
             <span class="tag">GitHub</span>
         </div>
+
+    </div>
+</section>
+
+<section id="programs">
+    <h2 class="title">C & Java Programs</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>1. C — Hello World</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    printf("Hello, World!\n");
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>2. C — Odd or Even</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+
+    printf("Enter a number: ");
+    if (scanf("%d", &amp;n) != 1)
+        return 1;
+
+    if (n % 2 == 0)
+        printf("Even\n");
+    else
+        printf("Odd\n");
+
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>3. C — Add Two Numbers</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int a, b;
+
+    printf("Enter two numbers: ");
+    if (scanf("%d %d", &amp;a, &amp;b) != 2)
+        return 1;
+
+    printf("Sum = %d\n", a + b);
+
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>4. C — Positive, Negative or Zero</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+
+    printf("Enter a number: ");
+    if (scanf("%d", &amp;n) != 1)
+        return 1;
+
+    if (n &gt; 0)
+        printf("Positive\n");
+    else if (n &lt; 0)
+        printf("Negative\n");
+    else
+        printf("Zero\n");
+
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>5. C — Multiplication Table</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+
+    printf("Enter a number: ");
+    if (scanf("%d", &amp;n) != 1)
+        return 1;
+
+    for (int i = 1; i &lt;= 10; i++) {
+        printf("%d x %d = %d\n",
+               n, i, n * i);
+    }
+
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>6. C — Factorial</h3>
+
+            <pre>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n;
+    unsigned long long fact = 1;
+
+    printf("Enter a number (0-20): ");
+
+    if (scanf("%d", &amp;n) != 1 ||
+        n &lt; 0 || n &gt; 20) {
+        printf("Invalid input\n");
+        return 1;
+    }
+
+    for (int i = 2; i &lt;= n; i++)
+        fact *= i;
+
+    printf("Factorial = %llu\n", fact);
+
+    return 0;
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>7. Java — Hello World</h3>
+
+            <pre>public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>8. Java — Odd or Even</h3>
+
+            <pre>import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        if (n % 2 == 0)
+            System.out.println("Even");
+        else
+            System.out.println("Odd");
+
+        sc.close();
+    }
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>9. Java — Add Two Numbers</h3>
+
+            <pre>import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter two numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        System.out.println("Sum = " + (a + b));
+
+        sc.close();
+    }
+}</pre>
+        </div>
+
+        <div class="card">
+            <h3>10. Java — Multiplication Table</h3>
+
+            <pre>import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        for (int i = 1; i &lt;= 10; i++) {
+            System.out.println(
+                n + " x " + i + " = " + (n * i)
+            );
+        }
+
+        sc.close();
+    }
+}</pre>
+        </div>
+
+    </div>
+
+    <p class="small">
+        These are sample practice programs. Run them in a compiler,
+        understand the code, and add more programs as you learn.
+    </p>
+</section>
+
+<section id="dsa">
+    <h2 class="title">DSA Practice</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Array</h3>
+            <p>An array stores multiple values of the same data type.</p>
+
+            <pre>int numbers[5] = {10, 20, 30, 40, 50};
+
+printf("%d", numbers[0]);</pre>
+
+            <span class="tag">Array Basics</span>
+        </div>
+
+        <div class="card">
+            <h3>Linear Search</h3>
+            <p>Checks array elements one by one until the target is found.</p>
+
+            <pre>int a[] = {5, 10, 15, 20};
+int target = 15;
+int found = -1;
+
+for (int i = 0; i &lt; 4; i++) {
+    if (a[i] == target) {
+        found = i;
+        break;
+    }
+}
+
+printf("%d", found);</pre>
+
+            <span class="tag">Searching</span>
+        </div>
+
+        <div class="card">
+            <h3>Bubble Sort</h3>
+            <p>Repeatedly compares neighbouring values and swaps them when needed.</p>
+
+            <pre>int a[] = {5, 2, 4, 1};
+int n = 4;
+
+for (int i = 0; i &lt; n - 1; i++) {
+    for (int j = 0; j &lt; n - 1 - i; j++) {
+        if (a[j] &gt; a[j + 1]) {
+            int temp = a[j];
+            a[j] = a[j + 1];
+            a[j + 1] = temp;
+        }
+    }
+}</pre>
+
+            <span class="tag">Sorting</span>
+        </div>
+
     </div>
 </section>
 
 <section id="projects">
-    <h2 class="section-title">My Projects</h2>
+    <h2 class="title">My Projects</h2>
 
-    <div class="projects">
+    <div class="grid">
 
         <div class="card">
-            <h3>C: Odd or Even</h3>
-            <p>
-                A C program that checks whether a number
-                is odd or even using the modulus operator.
-            </p>
-
-            <br>
-
-            <span class="tag">C Programming</span>
-            <span class="tag">Conditions</span>
-
-            <br><br>
-
-            <a href="https://github.com/sg9198910-star"
-               class="button" target="_blank" rel="noopener noreferrer">
-               View GitHub
-            </a>
+            <h3>Odd or Even Checker</h3>
+            <p>A beginner C program that checks whether an integer is odd or even.</p>
+            <span class="tag">C</span>
         </div>
 
         <div class="card">
-            <h3>Java: Hello World</h3>
-            <p>
-                A beginner Java program that prints
-                a message on the screen.
-            </p>
-
-            <br>
-
+            <h3>Java Practice Programs</h3>
+            <p>A collection of beginner examples covering output, arithmetic and loops.</p>
             <span class="tag">Java</span>
-            <span class="tag">Basics</span>
-
-            <br><br>
-
-            <a href="https://github.com/sg9198910-star"
-               class="button" target="_blank" rel="noopener noreferrer">
-               View GitHub
-            </a>
         </div>
 
         <div class="card">
-            <h3>Java: Calculator</h3>
-            <p>
-                A beginner project idea for performing
-                addition, subtraction, multiplication and division.
-            </p>
-
-            <br>
-
-            <span class="tag">Java</span>
-            <span class="tag">Operators</span>
-
-            <br><br>
-
-            <a href="https://github.com/sg9198910-star"
-               class="button" target="_blank" rel="noopener noreferrer">
-               View GitHub
-            </a>
+            <h3>Personal Portfolio Website</h3>
+            <p>A responsive personal portfolio built with HTML and CSS.</p>
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
         </div>
 
     </div>
 
-    <p style="text-align:center; margin-top:20px; color:#c4b5fd;">
-        Note: Add each project to GitHub before linking its
-        individual repository here.
+    <p class="small">
+        GitHub profile:
+        <a style="color:#22d3ee"
+           href="https://github.com/sg9198910-star"
+           target="_blank" rel="noopener noreferrer">
+           Visit GitHub
+        </a>
     </p>
 </section>
 
-<section id="contact">
-    <h2 class="section-title">Contact Me</h2>
+<section id="resume">
+    <h2 class="title">My Resume</h2>
 
-    <div class="contact">
-        <p>Interested in programming and learning new technologies?</p>
+    <div class="box">
+        <h3 style="color:#22d3ee">Shantanu Gupta</h3>
+
+        <p>
+            <strong>Career Objective</strong><br>
+            To obtain an entry-level opportunity in software development
+            where I can apply my programming fundamentals, learn new
+            technologies, and contribute to a team.
+        </p>
 
         <br>
 
+        <p>
+            <strong>Education</strong><br>
+            Bachelor of Computer Applications (BCA)<br>
+            Shri Ram Institute of Management &amp; Technology<br>
+            Expected completion: 2027
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Academic Results</strong><br>
+            Class 10: 65.5%<br>
+            Class 12: 72.3%
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Technical Skills</strong><br>
+            C Programming, DSA fundamentals, Java fundamentals,
+            HTML, CSS and GitHub.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Experience</strong><br>
+            Fresher — practising programming and building beginner projects.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Strengths</strong><br>
+            Hardworking, willing to learn, and interested in problem-solving.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>GitHub</strong><br>
+            <a style="color:#22d3ee"
+               href="https://github.com/sg9198910-star"
+               target="_blank" rel="noopener noreferrer">
+               github.com/sg9198910-star
+            </a>
+        </p>
+
+        <p class="small">
+            Check all resume details before sharing it with employers.
+            Contact details are not shown publicly in this version.
+        </p>
+
+        <button class="button" onclick="window.print()">
+            Print / Save Resume as PDF
+        </button>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="title">Contact & GitHub</h2>
+
+    <div class="box">
+        <p>Thank you for visiting my portfolio!</p>
+
         <a href="https://github.com/sg9198910-star"
            class="button" target="_blank" rel="noopener noreferrer">
-           Connect on GitHub
+           Visit My GitHub
         </a>
     </div>
 </section>
 
 <footer>
     <p>© 2026 Shantanu Gupta | Developer Portfolio</p>
-    <p>Built with HTML and CSS</p>
 </footer>
 
 </body>
-</html>
+    </html>
